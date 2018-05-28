@@ -6,8 +6,8 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/l
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
-RUN wget https://github.com/fudali113/go-tpl-replacer/releases/download/v0.1/go-tpl-replacer-0.1-linux && \
-    chmod +x ./go-tpl-replacer-0.1-linux && \
-    mv ./go-tpl-replacer-0.1-linux /usr/local/bin/go-tpl-replacer
+RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.1/go-tpl-replacer && \
+    chmod +x ./go-tpl-replacer && \
+    mv ./go-tpl-replacer /usr/local/bin/go-tpl-replacer
 
 CMD [ "sh" ]
