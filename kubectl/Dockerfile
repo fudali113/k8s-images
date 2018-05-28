@@ -10,5 +10,4 @@ RUN wget https://github.com/fudali113/go-tpl-replacer/releases/download/v0.1/go-
     chmod +x ./go-tpl-replacer-0.1-linux && \
     mv ./go-tpl-replacer-0.1-linux /usr/local/bin/go-tpl-replacer
 
-ENTRYPOINT [ "sh" ]
-
+CMD [ "sh" ]
