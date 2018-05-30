@@ -6,11 +6,11 @@ RUN mkdir ~/.kube && \
     echo "apiVersion: v1 \n\
 clusters:   \n\
 - cluster:  \n\
-{{if .k8sCAD}} \n\
+{{if .k8sCAD}}\
     certificate-authority-data: {{.k8sCAD}} \n\
-{{else}}    \n\
+{{else}}\
     insecure-skip-tls-verify: true \n\
-{{end}}     \n\
+{{end}}\
     server: {{.k8sServer}}  \n\
   name: k8s \n\
 contexts:   \n\
