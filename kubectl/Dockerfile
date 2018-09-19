@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 MAINTAINER fudali113@gmail.com
 
-RUN mkdir ~/.kube && /root/.kube && \
+RUN mkdir ~/.kube && mkdir /root/.kube && \
     echo -e "apiVersion: v1 \n\
 clusters:   \n\
 - cluster:  \n\
