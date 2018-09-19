@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 MAINTAINER fudali113@gmail.com
 
-RUN mkdir ~/.kube && root/.kube && \
+RUN mkdir ~/.kube && /root/.kube && \
     echo -e "apiVersion: v1 \n\
 clusters:   \n\
 - cluster:  \n\
@@ -30,7 +30,8 @@ users:  \n\
     token: {{.token}} \n\
 {{end}}\
     " > ~/config.tpl && \
-    cat ~/config.tpl > /config.tpl
+    cat ~/config.tpl > /config.tpl && \
+    cat ~/config.tpl > /root/config.tpl
 
 RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
