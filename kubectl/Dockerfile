@@ -30,8 +30,7 @@ users:  \n\
     token: {{.token}} \n\
 {{end}}\
     " > ~/config.tpl && \
-    cat ~/config.tpl > /config.tpl && \
-    cat ~/config.tpl > /root/config.tpl
+    cat ~/config.tpl > /config.tpl
 
 RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
