@@ -36,9 +36,9 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.14.8/bin/l
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
-RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.1/go-tpl-replacer && \
-    chmod +x ./go-tpl-replacer && \
-    mv ./go-tpl-replacer /usr/local/bin/go-tpl-replacer
+RUN wget https://github.com/fudali113/go-tpl-replacer/releases/download/0.1.1/go-tpl-replacer-0.1.1-linux && \
+    chmod +x ./go-tpl-replacer-0.1.1-linux && \
+    mv ./go-tpl-replacer-0.1.1-linux /usr/local/bin/go-tpl-replacer
     
 RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.2/kubedog-linux-amd64-v0.3.4 && \
     chmod +x ./kubedog-linux-amd64-v0.3.4 && \
