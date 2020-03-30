@@ -31,6 +31,17 @@ users:  \n\
 {{end}}\
     " > ~/config.tpl && \
     cat ~/config.tpl > /config.tpl
+    
+#更新Alpine的软件源为国内（清华大学）的站点，因为从默认官源拉取实在太慢了。。。
+RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/" > /etc/apk/repositories
+
+RUN apk update \
+        && apk upgrade \
+        && apk add --no-cache bash \
+        bash-doc \
+        bash-completion \
+        && rm -rf /var/cache/apk/* \
+        && /bin/bash
 
 RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.14.8/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
@@ -44,4 +55,4 @@ RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.2/kubedo
     chmod +x ./kubedog-linux-amd64-v0.3.4 && \
     mv ./kubedog-linux-amd64-v0.3.4 /usr/local/bin/kubedog
 
-CMD [ "sh" ]
+CMD [ "/bin/bash" ]
