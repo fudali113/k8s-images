@@ -32,12 +32,16 @@ users:  \n\
     " > ~/config.tpl && \
     cat ~/config.tpl > /config.tpl
 
-RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl && \
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.14.8/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
 RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.1/go-tpl-replacer && \
     chmod +x ./go-tpl-replacer && \
     mv ./go-tpl-replacer /usr/local/bin/go-tpl-replacer
+    
+RUN wget https://dl.bintray.com/flant/kubedog/v0.3.4/kubedog-linux-amd64-v0.3.4 && \
+    chmod +x ./kubedog && \
+    mv ./kubedog /usr/local/bin/kubedog
 
 CMD [ "sh" ]
