@@ -40,7 +40,7 @@ RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.1/go-tpl
     chmod +x ./go-tpl-replacer && \
     mv ./go-tpl-replacer /usr/local/bin/go-tpl-replacer
     
-RUN wget https://dl.bintray.com/flant/kubedog/v0.3.4/kubedog-linux-amd64-v0.3.4 && \
+RUN wget https://github.com/fudali113/k8s-images/releases/download/v0.1.2/kubedog-linux-amd64-v0.3.4 && \
     chmod +x ./kubedog && \
     mv ./kubedog /usr/local/bin/kubedog
 
